@@ -1,0 +1,96 @@
+:root {
+  --dark: #223042;
+  --light: #f2f230;
+}
+.showcase {
+  margin-top: 6%;
+  &_info {
+    margin: auto;
+    display: grid;
+    place-items: center;
+    height: 100vh;
+  }
+  &_text {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    text-shadow: -1px 3px 3px var(--light);
+    h1 {
+      font-weight: 900;
+      font-size: 64px;
+      line-height: 110%;
+      letter-spacing: -4px;
+      // color: rgb(251, 245, 243);
+
+      color: #223042;
+      width: 60%;
+      text-shadow: -1px -3px 3px var(--light);
+    }
+  }
+  &_btn {
+    text-shadow: -1px 3px 3px var(--light);
+  }
+  &_flex {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+}
+@property --rotate {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+.banner {
+  height: 100vh;
+  /* position: relative; */
+  background-image: conic-gradient(
+    from var(--rotate),
+    var(--dark),
+    var(--light) 60%
+  );
+  margin-top: -50px;
+  z-index: -1;
+  animation: rotateAnimation 10s linear infinite;
+}
+@keyframes rotateAnimation {
+  from {
+    --rotate: 0deg;
+  }
+  to {
+    --rotate: -360deg;
+  }
+}
+.banner .content {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  transform: translateY(-50%);
+  width: 33%;
+}
+.banner h1 {
+  margin: 0;
+  font-weight: 500;
+  font-size: xxx-large;
+}
+.banner button {
+  width: 200px;
+  height: 50px;
+  border: none;
+  margin: 20px 0;
+  border-radius: 10px;
+  background-color: var(--light);
+  font-weight: bold;
+}
+.statis {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  color: var(--light);
+}
+.statis p:nth-child(1) {
+  font-size: x-large;
+}
+.statis p:nth-child(2) {
+  font-size: xxx-large;
+  font-weight: bold;
+}
